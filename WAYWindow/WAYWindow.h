@@ -20,6 +20,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import "MTMainWindow.h"
+
 /** This NSWindow subclass provides an interface to enable OS X 10.10 Yosemite exclusive features conveniently. Next to customizing the look of the WAYWindow content view, you can also customize the title bar and standard window buttons (`traffic lights´). The public interface is generally similar to INAppStoreWindow to simplify the migration.
  Whenever it makes sense, the properties of your WAYWindow instance in Interface Builder are inspectable.
  
@@ -27,7 +29,7 @@
  - Check out the WWDC '14 session `Adopting Advanced Features of the New UI of OS X Yosemite´, which provides more details on how to make use of the new Yosemite APIs.
  - Also check out the new APIs in NSScrollView to make use of contentInsets, scrollInsets, and more.
  */
-@interface WAYWindow : NSWindow
+@interface WAYWindow : MTMainWindow
 
 /// Returns YES, if the class supports vibrant appearances. Can be used to determine if running on OS X 10.10+
 + (BOOL) supportsVibrantAppearances;
