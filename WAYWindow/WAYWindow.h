@@ -19,7 +19,6 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "MTMainWindow.h"
 
 /** This NSWindow subclass provides an interface to enable OS X 10.10 Yosemite exclusive features conveniently. Next to customizing the look of the WAYWindow content view, you can also customize the title bar and standard window buttons (`traffic lights´). The public interface is generally similar to INAppStoreWindow to simplify the migration.
  Whenever it makes sense, the properties of your WAYWindow instance in Interface Builder are inspectable.
@@ -28,7 +27,7 @@
  - Check out the WWDC '14 session `Adopting Advanced Features of the New UI of OS X Yosemite´, which provides more details on how to make use of the new Yosemite APIs.
  - Also check out the new APIs in NSScrollView to make use of contentInsets, scrollInsets, and more.
  */
-@interface WAYWindow : MTMainWindow
+@interface WAYWindow : NSWindow
 
 /// Returns YES, if the class supports vibrant appearances. Can be used to determine if running on OS X 10.10+
 + (BOOL) supportsVibrantAppearances;
@@ -45,11 +44,16 @@
 /// If set to YES, the standard window button will be vertically centered. Default: YES.
 @property (nonatomic) IBInspectable BOOL centerTrafficLightButtons;
 
+@property (nonatomic) IBInspectable BOOL verticalTrafficLightButtons;
+
 /// Defines the left margin of the standard window buttons. Defaut: OS X default value.
 @property (nonatomic) IBInspectable CGFloat trafficLightButtonsLeftMargin;
 
 /// Defines the top margin of the standard window buttons. Used if not centered. Defaut: OS X default value.
 @property (nonatomic) IBInspectable CGFloat trafficLightButtonsTopMargin;
+
+/// If set to YES, the titlebar of the window will be hidden in full-screen mode. Default: NO;
+@property (nonatomic) IBInspectable BOOL hideTitleBarInFullScreen;
 
 /// If set to YES, the title of the window will be hidden. Default: YES.
 @property (nonatomic) IBInspectable BOOL hidesTitle;
@@ -80,5 +84,9 @@
 
 /// Returns YES if the window is currently in full-screen.
 - (BOOL) isFullScreen;
+
+- (void) _setNeedsLayout;
+
+- (void) _setUp;
 
 @end
