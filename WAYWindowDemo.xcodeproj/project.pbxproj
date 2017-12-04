@@ -7,18 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D06F6551A18C13600B725C6 /* WAYWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D06F6541A18C13600B725C6 /* WAYWindow.m */; };
 		4DF97AD11A17DA7700351BC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF97AD01A17DA7700351BC9 /* AppDelegate.m */; };
 		4DF97AD31A17DA7700351BC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF97AD21A17DA7700351BC9 /* main.m */; };
 		4DF97AD81A17DA7700351BC9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DF97AD61A17DA7700351BC9 /* MainMenu.xib */; };
 		4DF97AFA1A17F11900351BC9 /* calculatorIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DF97AF81A17F11900351BC9 /* calculatorIcon@2x.png */; };
 		4DF97AFB1A17F11900351BC9 /* viewIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DF97AF91A17F11900351BC9 /* viewIcon@2x.png */; };
 		4DF97AFD1A17F1E600351BC9 /* dummyBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DF97AFC1A17F1E600351BC9 /* dummyBackground@2x.png */; };
+		C759CFB01FD59E200076E768 /* WAYWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = C759CFAE1FD59E200076E768 /* WAYWindow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4D06F6531A18C13600B725C6 /* WAYWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAYWindow.h; sourceTree = "<group>"; };
-		4D06F6541A18C13600B725C6 /* WAYWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAYWindow.m; sourceTree = "<group>"; };
 		4DF97ACA1A17DA7700351BC9 /* WAYWindowDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WAYWindowDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF97ACE1A17DA7700351BC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DF97ACF1A17DA7700351BC9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -28,6 +26,8 @@
 		4DF97AF81A17F11900351BC9 /* calculatorIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calculatorIcon@2x.png"; sourceTree = "<group>"; };
 		4DF97AF91A17F11900351BC9 /* viewIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "viewIcon@2x.png"; sourceTree = "<group>"; };
 		4DF97AFC1A17F1E600351BC9 /* dummyBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dummyBackground@2x.png"; sourceTree = "<group>"; };
+		C759CFAE1FD59E200076E768 /* WAYWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WAYWindow.m; path = WAYWindow/WAYWindow.m; sourceTree = "<group>"; };
+		C759CFAF1FD59E200076E768 /* WAYWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WAYWindow.h; path = WAYWindow/WAYWindow.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,18 +41,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4D06F6521A18C13600B725C6 /* WAYWindow */ = {
-			isa = PBXGroup;
-			children = (
-				4D06F6531A18C13600B725C6 /* WAYWindow.h */,
-				4D06F6541A18C13600B725C6 /* WAYWindow.m */,
-			);
-			path = WAYWindow;
-			sourceTree = SOURCE_ROOT;
-		};
 		4DF97AC11A17DA7700351BC9 = {
 			isa = PBXGroup;
 			children = (
+				C759CFAD1FD59E100076E768 /* WAYWindow */,
 				4DF97ACC1A17DA7700351BC9 /* WAYWindowDemo */,
 				4DF97ACB1A17DA7700351BC9 /* Products */,
 			);
@@ -69,7 +61,6 @@
 		4DF97ACC1A17DA7700351BC9 /* WAYWindowDemo */ = {
 			isa = PBXGroup;
 			children = (
-				4D06F6521A18C13600B725C6 /* WAYWindow */,
 				4DF97ACF1A17DA7700351BC9 /* AppDelegate.h */,
 				4DF97AD01A17DA7700351BC9 /* AppDelegate.m */,
 				4DF97AF81A17F11900351BC9 /* calculatorIcon@2x.png */,
@@ -88,6 +79,15 @@
 				4DF97AD21A17DA7700351BC9 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C759CFAD1FD59E100076E768 /* WAYWindow */ = {
+			isa = PBXGroup;
+			children = (
+				C759CFAF1FD59E200076E768 /* WAYWindow.h */,
+				C759CFAE1FD59E200076E768 /* WAYWindow.m */,
+			);
+			name = WAYWindow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,7 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D06F6551A18C13600B725C6 /* WAYWindow.m in Sources */,
+				C759CFB01FD59E200076E768 /* WAYWindow.m in Sources */,
 				4DF97AD31A17DA7700351BC9 /* main.m in Sources */,
 				4DF97AD11A17DA7700351BC9 /* AppDelegate.m in Sources */,
 			);
