@@ -250,10 +250,6 @@ static float kWAYWindowDefaultTrafficLightButtonsTopMargin = 0;
     [self setTitleVisibility:hidesTitle ? NSWindowTitleHidden : NSWindowTitleVisible];
 }
 
-- (void) setShowsTitle:(BOOL)showsTitle {
-    [self setTitleVisibility:showsTitle ? NSWindowTitleVisible : NSWindowTitleHidden];
-}
-
 - (BOOL)hidesTitle {
     return self.titleVisibility == NSWindowTitleHidden;
 }
@@ -362,7 +358,6 @@ static float kWAYWindowDefaultTrafficLightButtonsTopMargin = 0;
 
 	self.hidesTitle = YES;
 
-	self.showsTitle = NO;
 	self.verticallyCenterTitle = YES;
 
 	[super setDelegate:self];
@@ -425,7 +420,7 @@ static float kWAYWindowDefaultTrafficLightButtonsTopMargin = 0;
 - (void) layoutVerticallyCenterTitle
 {
     NSRect drawingRect = self.titleBarView.frame;
-    if (self.showsTitle)
+    if (!self.hidesTitle)
     {
         NSRect titleTextRect;
         NSDictionary *titleTextStyles = nil;

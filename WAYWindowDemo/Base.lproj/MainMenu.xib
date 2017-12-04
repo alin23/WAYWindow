@@ -669,14 +669,14 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="WAYWindowDemo" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="QvC-M9-y7g" customClass="WAYWindow">
+        <window title="WAYWindowDemo" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" titleVisibility="hidden" id="QvC-M9-y7g" customClass="WAYWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="400" height="363"/>
+            <rect key="contentRect" x="335" y="390" width="400" height="450"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="400" height="363"/>
+                <rect key="frame" x="0.0" y="0.0" width="400" height="450"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="vRH-X4-fCc">
@@ -701,19 +701,19 @@
             </view>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="number" keyPath="titleBarHeight">
-                    <real key="value" value="50"/>
+                    <real key="value" value="40"/>
                 </userDefinedRuntimeAttribute>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="centerTrafficLightButtons" value="YES"/>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="hidesTitle" value="YES"/>
                 <userDefinedRuntimeAttribute type="number" keyPath="trafficLightButtonsLeftMargin">
-                    <real key="value" value="17"/>
+                    <real key="value" value="12"/>
                 </userDefinedRuntimeAttribute>
                 <userDefinedRuntimeAttribute type="number" keyPath="trafficLightButtonsTopMargin">
                     <real key="value" value="0.0"/>
                 </userDefinedRuntimeAttribute>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="verticallyCenterTitle" value="YES"/>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="verticalTrafficLightButtons" value="NO"/>
-                <userDefinedRuntimeAttribute type="boolean" keyPath="showsTitle" value="YES"/>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="hideTitleBarInFullScreen" value="YES"/>
             </userDefinedRuntimeAttributes>
             <point key="canvasLocation" x="350" y="483.5"/>
         </window>

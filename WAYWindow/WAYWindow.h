@@ -58,9 +58,6 @@
 /// If set to YES, the title of the window will be hidden. Default: YES.
 @property (nonatomic) IBInspectable BOOL hidesTitle;
 
-/// If set to YES, the title of the window is shown. Default: NO.
-@property (nonatomic) IBInspectable BOOL showsTitle;
-
 /// Replaces the window's content view with an instance of NSVisualEffectView and applies the Vibrant Dark look. Transfers all subviews to the new content view.
 - (void) setContentViewAppearanceVibrantDark;
 

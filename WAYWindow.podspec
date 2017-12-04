@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'WAYWindow'
-  spec.version      = '0.0.4'
+  spec.version      = '0.0.5'
   spec.license      = { :type => 'BSD' }
   spec.homepage     = 'https://github.com/weAreYeah/WAYWindow'
   spec.authors      = { 'Raffael Hannemann' => 'hello@weareYeah.com' }
