@@ -153,7 +153,7 @@ static float kWAYWindowDefaultTrafficLightButtonsTopMargin = 0;
 
 + (float) defaultTitleBarHeight {
 	NSRect frame = NSMakeRect(0, 0, 800, 600);
-	NSRect contentRect = [NSWindow contentRectForFrameRect:frame styleMask: NSTitledWindowMask];
+	NSRect contentRect = [NSWindow contentRectForFrameRect:frame styleMask: NSWindowStyleMaskTitled];
 	return NSHeight(frame) - NSHeight(contentRect);
 }
 
@@ -287,7 +287,7 @@ static float kWAYWindowDefaultTrafficLightButtonsTopMargin = 0;
 }
 
 - (BOOL) isFullScreen {
-	return (([self styleMask] & NSFullScreenWindowMask) == NSFullScreenWindowMask);
+	return (([self styleMask] & NSWindowStyleMaskFullSizeContentView) == NSWindowStyleMaskFullSizeContentView);
 }
 
 - (void) replaceSubview: (NSView *) aView withView: (NSView *) newView resizing:(BOOL)flag {
@@ -339,7 +339,7 @@ static float kWAYWindowDefaultTrafficLightButtonsTopMargin = 0;
 	kWAYWindowDefaultTrafficLightButtonsLeftMargin = NSMinX(closeButton.frame);
 	kWAYWindowDefaultTrafficLightButtonsTopMargin = NSHeight(closeButton.superview.frame)-NSMaxY(closeButton.frame);
 
-	self.styleMask |= NSFullSizeContentViewWindowMask;
+	self.styleMask |= NSWindowStyleMaskFullSizeContentView;
 	_trafficLightButtonsLeftMargin = kWAYWindowDefaultTrafficLightButtonsLeftMargin;
 	_trafficLightButtonsTopMargin = kWAYWindowDefaultTrafficLightButtonsTopMargin;
 
