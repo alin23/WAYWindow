@@ -214,7 +214,7 @@ static float kWAYWindowDefaultTrafficLightButtonsTopMargin = 0;
     [self _setNeedsLayout];
 }
 
-(void) setVerticallyCenterTitle:(BOOL)verticallyCenterTitle {
+- (void) setVerticallyCenterTitle:(BOOL)verticallyCenterTitle {
     _verticallyCenterTitle = verticallyCenterTitle;
     [self _setNeedsLayout];
 }
@@ -234,10 +234,14 @@ static float kWAYWindowDefaultTrafficLightButtonsTopMargin = 0;
     _dummyTitlebarAccessoryViewController.fullScreenMinHeight = titleBarHeight;
     [self addTitlebarAccessoryViewController:_dummyTitlebarAccessoryViewController];
 
+    if (self.frameAutosaveName) {
+        [self setFrameUsingName:self.frameAutosaveName];
+    }
     NSRect frame = self.frame;
     frame.size.height += delta;
+    frame.size.height -= titleBarHeight; // prevent increasing the window height after every launch
     frame.origin.y -= delta;
-
+    frame.origin.y += titleBarHeight; // prevent changing the window position after every launch
     [self _setNeedsLayout];
     [self setFrame:frame display:NO]; // NO is important.
 }
@@ -350,10 +354,10 @@ static float kWAYWindowDefaultTrafficLightButtonsTopMargin = 0;
 
 - (void) _setNeedsLayout {
 	[_standardButtons enumerateObjectsUsingBlock:^(NSButton *standardButton, NSUInteger idx, BOOL *stop) {
-    NSRect frame = standardButton.frame;
-        CGFloat trafficLightSeparation = 5.0;
+	    NSRect frame = standardButton.frame;
         if (_verticalTrafficLightButtons)
         {
+	        CGFloat trafficLightSeparation = 5.0;
             if (_centerTrafficLightButtons)
             {
                 CGFloat trafficLightsHeight = 3.0*NSHeight(frame) + 2.0*trafficLightSeparation;
@@ -375,7 +379,13 @@ static float kWAYWindowDefaultTrafficLightButtonsTopMargin = 0;
             else
                 frame.origin.y = NSHeight(standardButton.superview.frame)-NSHeight(standardButton.frame)-_trafficLightButtonsTopMargin;
 
-            frame.origin.x = _trafficLightButtonsLeftMargin +idx*(NSWidth(frame) + (trafficLightSeparation - 1.0));
+            CGFloat buttonMargin = 6;
+            if (NSApp.userInterfaceLayoutDirection == NSUserInterfaceLayoutDirectionLeftToRight) {
+                frame.origin.x = _trafficLightButtonsLeftMargin + idx*(NSWidth(frame) + buttonMargin);
+            } else {
+                frame.origin.x = NSMaxX(standardButton.superview.bounds) - _trafficLightButtonsLeftMargin - (idx+1)*NSWidth(frame) - idx*buttonMargin;
+            }
+
             [standardButton setFrame:frame];
         }
     }];
