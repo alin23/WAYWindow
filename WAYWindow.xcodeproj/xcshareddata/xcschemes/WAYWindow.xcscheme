@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C7CFEA321FD59396000AC4A6"
-               BuildableName = "libWAYWindow.dylib"
+               BlueprintIdentifier = "C735DD671FD5AF8200FBD16F"
+               BuildableName = "WAYWindow.framework"
                BlueprintName = "WAYWindow"
                ReferencedContainer = "container:WAYWindow.xcodeproj">
             </BuildableReference>
@@ -47,8 +47,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C7CFEA321FD59396000AC4A6"
-            BuildableName = "libWAYWindow.dylib"
+            BlueprintIdentifier = "C735DD671FD5AF8200FBD16F"
+            BuildableName = "WAYWindow.framework"
             BlueprintName = "WAYWindow"
             ReferencedContainer = "container:WAYWindow.xcodeproj">
          </BuildableReference>
@@ -65,8 +65,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C7CFEA321FD59396000AC4A6"
-            BuildableName = "libWAYWindow.dylib"
+            BlueprintIdentifier = "C735DD671FD5AF8200FBD16F"
+            BuildableName = "WAYWindow.framework"
             BlueprintName = "WAYWindow"
             ReferencedContainer = "container:WAYWindow.xcodeproj">
          </BuildableReference>

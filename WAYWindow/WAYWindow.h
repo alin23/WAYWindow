@@ -20,6 +20,13 @@
 
 #import <Cocoa/Cocoa.h>
 
+    //! Project version number for ModernWindow.
+FOUNDATION_EXPORT double WAYWindowVersionNumber;
+
+    //! Project version string for ModernWindow.
+FOUNDATION_EXPORT const unsigned char WAYWindowVersionString[];
+
+    // In this header, you should import all the public headers of your framework using statements like #import <ModernWindow/PublicHeader.h>
 /** This NSWindow subclass provides an interface to enable OS X 10.10 Yosemite exclusive features conveniently. Next to customizing the look of the WAYWindow content view, you can also customize the title bar and standard window buttons (`traffic lights´). The public interface is generally similar to INAppStoreWindow to simplify the migration.
  Whenever it makes sense, the properties of your WAYWindow instance in Interface Builder are inspectable.
 
