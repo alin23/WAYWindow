@@ -388,12 +388,17 @@ static float kWAYWindowDefaultTrafficLightButtonsTopMargin = 0;
 
             [standardButton setFrame:frame];
         }
+        [standardButton.superview addSubview:standardButton];
     }];
 
     // Vertically center window title if necessary.
     if (self.verticallyCenterTitle) {
         [self layoutVerticallyCenterTitle];
     }
+
+    NSView *themeFrame = self.titleBarView.superview.superview;
+    [themeFrame viewWillStartLiveResize];
+    [themeFrame viewDidEndLiveResize];
 }
 
 // Position the title so it is centered vertically in the parent's view. This is done by traversing
