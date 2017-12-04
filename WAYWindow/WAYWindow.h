@@ -23,7 +23,7 @@
 
 /** This NSWindow subclass provides an interface to enable OS X 10.10 Yosemite exclusive features conveniently. Next to customizing the look of the WAYWindow content view, you can also customize the title bar and standard window buttons (`traffic lights´). The public interface is generally similar to INAppStoreWindow to simplify the migration.
  Whenever it makes sense, the properties of your WAYWindow instance in Interface Builder are inspectable.
- 
+
  Tips:
  - Check out the WWDC '14 session `Adopting Advanced Features of the New UI of OS X Yosemite´, which provides more details on how to make use of the new Yosemite APIs.
  - Also check out the new APIs in NSScrollView to make use of contentInsets, scrollInsets, and more.
@@ -39,6 +39,9 @@
 //// Returns the titlebar view of the window, which you can add arbitrary subviews to.
 @property (strong,readonly) IBOutlet NSView *titleBarView;
 
+/// If set to YES, the title of the window is vertically centered. Default: YES.
+@property (nonatomic) IBInspectable BOOL verticallyCenterTitle;
+
 /// If set to YES, the standard window button will be vertically centered. Default: YES.
 @property (nonatomic) IBInspectable BOOL centerTrafficLightButtons;
 
@@ -50,6 +53,9 @@
 
 /// If set to YES, the title of the window will be hidden. Default: YES.
 @property (nonatomic) IBInspectable BOOL hidesTitle;
+
+/// If set to YES, the title of the window is shown. Default: NO.
+@property (nonatomic) IBInspectable BOOL showsTitle;
 
 /// Replaces the window's content view with an instance of NSVisualEffectView and applies the Vibrant Dark look. Transfers all subviews to the new content view.
 - (void) setContentViewAppearanceVibrantDark;
