@@ -36,9 +36,8 @@
 				C735DD701FD5B02A00FBD16F /* WAYWindow.m */,
 				C735DD6B1FD5AF8200FBD16F /* Info.plist */,
 			);
-			name = WAYWindow;
-			path = /Users/alin/Github/alin23/WAYWindow/WAYWindow;
-			sourceTree = "<absolute>";
+			path = WAYWindow;
+			sourceTree = "<group>";
 		};
 		C7CFEA2A1FD59396000AC4A6 = {
 			isa = PBXGroup;
